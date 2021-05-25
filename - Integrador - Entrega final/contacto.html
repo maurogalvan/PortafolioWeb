@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>Mauro Galvan - Developer</title>
+
+    <link rel="shortcut icon" href="Images/logo1.jpg">
+
+    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+    <!-- Header -->
+  <header>
+    <div class="contenedor">
+        <div id="titulo">
+            <a class="fas fa-laptop-code" href="index.html"> Mauro Galvan</a>
+        </div>
+          
+        <input type="checkbox" id="menu-bar">
+        <label class="fas fa-bars" for="menu-bar"></label>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="sobre-mi.html">Sobre mi</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Imagen y titulo -->
+    <section class="bloque">
+        <img src="Images/contactame.png" alt="ImageTable">
+    </section>
+
+    <section class="iframe">
+      <h2>Podes encontrarme en:</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4685.958071433835!2d-59.08013582555203!3d-37.31900410372903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x286855f21983ad47!2sResidencias%20UNICEN!5e0!3m2!1ses-419!2sar!4v1621469622865!5m2!1ses-419!2sar" width="400" height="300"  allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section id="seccion_formulario">
+      <h2>Podes escribirme a traves de:</h2>
+      <form class="formulario" action="show_data.html" target="_blanc">
+        <label for="firstname">Nombre:  </label><input size="30" type="text" name="firstname" placeholder="Ingrese su nombre aqui.." required>
+        <label for="lastname">Apellido:  </label><input size="30" type="text" name="lastname" placeholder="Ingrese su apellido aqui.." required> 
+        <label for="email">Email:  </label><input size="30" type="email" name="email" placeholder="Ingrese su email aqui.." required>
+        <label for="city">Ciudad:  </label><input size="30" type="text" name="city" value="Balcarce" required>
+        <!-- Queda comentado por que para un formulario de contacto no lo veo necesario
+          <label for="zipcode">Codigo postal:  </label><input size="30" type="number" name="zipcode" required> 
+          <label for="BirthDate">Fecha nacimiento:  </label><input size="30" type="date" name="birthdate" required> 
+        -->
+  
+        <label for="subject">Mensaje</label><textarea id="subject" name="subject" placeholder="Escribe un mensaje.." style="height:200px"></textarea>
+        
+        <input type="submit" value="Enviar">
+        <button type="reset">Resetear</button>
+  
+      </form>
+    </section>
+    
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="pag-externas">
+    <div class="contenedor">
+      <p class="copyright"> Mauro Galvan &copy; 2021</p>
+      <div class="redSociales">
+        <a class="fab fa-facebook" href="https://www.facebook.com/mauro.galvan.ariel/"></a>
+        <a class="fab fa-linkedin" href="https://www.linkedin.com/in/mauro-galvan/"></a>
+        <a class="fab fa-instagram" href="https://www.instagram.com/mauro_galvan/"></a>
+        <a class="fab fa-twitter-square" href="https://twitter.com/1mauroGalvan"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
