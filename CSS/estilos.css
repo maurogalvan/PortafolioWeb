@@ -1,0 +1,434 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Para cuando le demos padding o boder sea dentro del modelo de caja para el resposive*/
+    font-family: 'Lato', sans-serif;
+    
+}
+
+*::selection{
+    color: white;
+    background: #900C3F;
+}
+ /*----Header----*/
+
+header{
+    width: 100%;
+    height: 50px; /*Tamaño del ancho de la barra*/
+    background: #282828;
+    color: white;
+    
+    position: fixed; /* Para que se quede fijo arriba*/
+    top: 0; /*Para que arranque de arriba a la  izqueirda*/
+    left: 0;
+    z-index: 100; /*Para que este siempre por encima de los demas*/
+}
+
+.contenedor{
+    width: 98%; /*Para darle un 98% del header*/
+    margin: auto; /*Para que este centrado*/
+}
+
+.contenedor #titulo{
+    float: left; /*Para que este en la izquierda*/
+    top: 0;
+    left: 0;
+    margin:0;
+    padding: 5px;
+    
+}
+.contenedor #titulo a{
+    
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+   
+}
+
+header .contenedor {
+    display: table; /*Esto por que se me salian los textos*/
+}
+
+/*---- MENU -----*/
+
+#menu-bar{ /*Barra del menu*/
+    display:none; /*Esto es para que saque el checkbox*/
+}
+
+header label{
+    float: right; /*Para que se vaya a la derecha*/
+    font-size: 30px;
+    margin: 6px 0; /*El cero es para que me quede proporcional*/
+    cursor: pointer; /*Cuando pase la flechita para que  ponga la manito*/
+}
+
+.menu{
+   
+    position: absolute; /*Posicion con respecto a un punto*/
+    width: 100%; /*Para que ocupe todo*/
+     /*Para que se acomode*/
+    background: #282828;
+    opacity: 0.8; /*Para que lo deje un poco transparente*/
+    top: 50px; /*Esto a 50px para que arranque despues del header que son 50px*/
+    left: 0;
+
+    transition: all 0.6s; /*Una transicion*/
+    transform: translateX(-100%); /*Esto es una transformacion, lo que hace es transladar toda la barra a la izquierda al 100%, para que cuando aprete la translate 100% pero a la derecha*/
+}
+
+.menu a{
+    display: block; /*Esto para que se quede fijo a ese tamaño*/
+    color: white;
+    text-decoration: none;
+    height: 67px; 
+    text-align: center; /*Para ponerlos al centro*/
+    padding: 15px; 
+    border-bottom: 1px solid rgb(133, 130, 130); /*Para darle una linea abajo como para que se distinga*/
+}
+
+.menu a:hover{
+    background:rgb(133, 130, 130); /*Para que cuando pase la flechita se ponga en otro color*/
+}
+
+#menu-bar:checked ~ .menu{ /*Cuando el checkbox este activado, lo que va hacer es seleccionar a la id "menu"*/
+    transform: translateX(0%); /*Ahora cuando hace click en el checkbox, transforma el eje x a 0, por ende aparece.*/
+}
+
+@media (min-width: 1000px){ /*Esto es para poner el menu en la barra -> PARA PC*/
+/*Esto quiere decir si estoy en una pagina con mas de 1024 que haga esto, si no, todo lo anterior*/
+    .menu {
+        position: static; /*Para que se mantenga en un lugar*/
+        width: auto;
+        height: auto;
+        transform: translateX(0%); /*En la pc no queremos que se translade*/
+        float: right; /*Esto para que se vaya a la derecha*/
+        display: flex; /*Para que me lo ponga todo en una linea*/
+    }
+
+    .menu a {
+        border: none;
+        height: 50px;
+        font-size: 20px;
+        padding: none;
+        
+    }
+
+    .contenedor label {
+        display: none;
+    }
+}
+@media (max-width:640px){
+    .card_contenedor{
+        display: block;
+        width: 450px;
+    }
+    .header_contenedor{
+        padding: 20px 20px 5px 20px;
+        border: none;
+    }
+    .descripcion{
+        padding: 5px 20px 20px 20px;
+        background: transparent;
+    }
+    .header_contenedor h4{
+        margin: 0;
+    }
+
+}
+
+
+/*---- FIN HEADER ----*/
+
+/*---- MAIN ----*/
+
+
+/*---- BLOCK PRINCIPAL ----*/
+section{ /*Esto para todos los section, que tengan el 100% de ancho, y 25px por debajo para que el contenido lo empuje.*/
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.bloque{
+    margin-top: 50px; /*Para que arranque por debajo de la barra principal*/
+    position: relative;
+}
+
+.bloque img {
+    width: 100%;
+    
+}
+
+.bloque .contenedor {
+    position: absolute; /*Esto para que se posicione con respecto al mas cercano, que es el block*/
+    top: 50%;
+    left: 50%;
+    
+    transform: translateX(-50%) translateY(30%); /*Esto es para que este pegado a la izquierda*/
+    color: black;
+    
+}
+
+.bloque h2{
+    font-size: 7vw;
+    font-weight: 10vw !important;
+    float: left;
+    background-color: white;
+    opacity: 0.7;
+    padding: 10PX;
+}
+
+.bloque p{
+    font-size: 2vw;
+}
+
+
+
+/*---- BIENVENIDOS ----*/
+#bienvenidos {
+    text-align: center;
+    border: 1px black solid;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+#bienvenidos h2{
+    font-size:20px;
+    font-weight: bold;
+}
+#bienvenidos p {
+    font-size: 20px;
+}
+
+#tituloPagina{
+    text-align: center;
+    border-top: 1px solid #282828;
+    border-bottom: 1px solid #282828;
+    padding: 30px;
+}
+/*---- MODELO DE CAJA ----*/
+
+.caja {
+    background: #282828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.caja h2, h4{
+    text-align: center;
+}
+.caja h2{
+    font-size: 40px;
+}
+.caja .sub-titulo{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    border-bottom: 1px solid white;
+}
+
+.contenedor{
+    display: flex; /*Para que las imagenes esten en una sola linea. Tambien para que sea una caja flexible*/
+    justify-content: center; /*Esto para centrar todo*/
+    flex-wrap: wrap; /*Esto es para los que no entran se pongan abajo*/
+}
+
+.caja article{
+    padding: 15px;
+    margin: 15px;
+}
+
+.contenedor img{
+    width: 100%;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 6px white solid;
+    border-radius: 10%;
+}
+
+
+.caja .contenedor article:hover{
+    background: gray;
+}
+
+.caja .contenedor a:link{
+    color: white
+}
+
+.informacion{
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 400; 
+    color: #ffffff; 
+    background:#ee0467
+}
+
+
+/*Boostrap*/
+
+.list-group{
+    border-radius: none;
+}
+.list-group h2{
+    text-align: center;
+    font-size: 30px;
+}
+.list-group a {
+    padding: 20px;
+    background-color: #a80b48;
+    color: white;
+    border: 1px black solid;
+    padding: 20px;
+    
+}
+.list-group a:hover {
+    background-color: rgb(73, 188, 226);
+    color: black;
+}
+/*Fin boostrap*/
+
+.seccion{
+    background: #282828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.sub-seccion{
+    display: flex; /*Para que las imagenes esten en una sola linea. Tambien para que sea una caja flexible*/
+    justify-content: center; /*Esto para centrar todo*/
+    flex-wrap: wrap; /*Esto es para los que no entran se pongan abajo*/
+}
+
+.seccion article{
+    padding: 15px;
+    margin: 15px;
+}
+
+.sub-seccion p {
+    max-width: 100%;
+    
+    max-height: 250px;
+    object-fit:inherit;
+    border: 6px white solid;
+    border-radius: 10%;
+}
+
+.div_contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #282828;
+    padding: 0 20px;
+}
+.card_contenedor{
+    display: flex;
+    width: 600px;
+    height: auto;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px 2px rgba(0,0,0,.2);
+}
+
+.header_contenedor{
+    border-right: 1px solid #ddd;
+}
+.descripcion{
+    background: #fbfbfbfb;
+}
+.header_contenedor .descripcion{
+    padding: 20px;
+    text-align: center;
+}
+.header_contenedor a{
+    position: relative;
+    display: box;
+}
+.header_contenedor img{
+   
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px rgba(0,0,0,.06);
+    margin: 20px 30px;
+    transition: .2s;
+}
+
+.header_contenedor a:hover img{
+    box-shadow: 0 0 0 12px rgba(0, 0, 0,.2);
+}
+
+.header_contenedor h2{
+    color: #f0522a;
+    text-align: center;
+}
+.header_contenedor h4{
+    margin-bottom: 20px;
+    
+}
+.descripcion {
+    position: relative;
+}
+.descripcion p{
+    margin: 20px 30px;
+}
+.descripcion .sociales{
+    margin-top: 25px;
+    text-align: center;
+}
+.descripcion .sociales a{
+    display: inline-block;
+    padding: 8px;
+    color: #f0522a;
+    
+}
+
+
+
+/*---- FIN MAIN ----*/
+
+
+
+/*---- FOOTER ----*/
+
+footer .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 20px;
+}
+
+.redSociales{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.redSociales a{
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+}
+
+.pag-externas{
+    background: #3b3030;
+    color: white;
+    padding: 30px;
+}
+
+.pag-externas .redSociales a{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+}
+/*---- FIN FOOTER ----*/
+
+/*PRUEBA*/
+
+
